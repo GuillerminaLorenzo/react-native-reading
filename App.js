@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { View } from 'react-native';
-import styles from "./scr/components/style/Styles";
-import NextButton from './scr/components/buttons/NextButton';
-import PrevButton from './scr/components/buttons/PrevButton';
-import WebViewComponent from './scr/components/webview/WebViewComponent';
+import styles from "./components/Styles";
+import NextButton from './components/NextButton';
+import PrevButton from './components/PrevButton';
+import WebViewComponent from './components/WebViewComponent';
 
 const App = () => {
   const webviewRef = useRef();

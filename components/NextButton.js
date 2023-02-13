@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
-import styles from "../style/Styles";
+import styles from "./Styles";
 
 const NextButton = ({webviewRef, currentHeading, pageHeading, setCurrentHeading}) => {
   const secondToLastHeading = pageHeading.length - 1;
