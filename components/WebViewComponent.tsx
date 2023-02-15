@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { WebView, WebViewMessageEvent } from 'react-native-webview';
+import styles from "./Styles";
 
 type WebViewComponentProps = {
   source: {
@@ -23,6 +24,7 @@ const WebViewComponent: FC<WebViewComponentProps> = ({ source, webviewRef, setPa
 
   return (
     <WebView
+      style = {styles.webview}
       allowFileAccess={true}
       originWhitelist={['*']}
       source={source}
