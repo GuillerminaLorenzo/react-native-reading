@@ -7,7 +7,7 @@ type WebViewComponentProps = {
     html: string;
   };
   webviewRef: React.MutableRefObject<WebView | null>;
-  setPageHeading: React.Dispatch<React.SetStateAction<number>>;
+  setPageHeading: React.Dispatch<React.SetStateAction<number[]>>;
 };
 
 const WebViewComponent: FC<WebViewComponentProps> = ({ source, webviewRef, setPageHeading }) => {
