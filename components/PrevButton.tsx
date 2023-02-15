@@ -2,7 +2,14 @@ import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 import styles from "./Styles";
 
-const PrevButton = ({webviewRef, currentHeading, pageHeading, setCurrentHeading}) => {
+type PrevButtonProps = {
+  webviewRef: React.RefObject<any>;
+  currentHeading: number;
+  pageHeading: Array<{top: number}>;
+  setCurrentHeading: React.Dispatch<React.SetStateAction<number>>;
+};
+
+const PrevButton: React.FC<PrevButtonProps> = ({webviewRef, currentHeading, pageHeading, setCurrentHeading}) => {
   const secondToLastHeading = pageHeading.length - 1;
   const prevHeading = currentHeading - 1;
 
@@ -21,8 +28,8 @@ const PrevButton = ({webviewRef, currentHeading, pageHeading, setCurrentHeading}
     }
   };
 
-  const scrollToHeadings = (heading) => {
-    webviewRef.current.injectJavaScript(`
+  const scrollToHeadings = (heading: number) => {
+    webviewRef.current?.injectJavaScript(`
       window.scrollTo(0, ${heading});
     `);
   };
