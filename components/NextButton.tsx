@@ -5,7 +5,7 @@ import styles from "./Styles";
 type NextButtonProps = {
   webviewRef: React.RefObject<any>;
   currentHeading: number;
-  pageHeading: Array<{top: number}>;
+  pageHeading: Array<any>;
   setCurrentHeading: React.Dispatch<React.SetStateAction<number>>;
 };
 

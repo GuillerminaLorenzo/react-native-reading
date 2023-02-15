@@ -9,7 +9,7 @@ const App: React.FC = () => {
   const webviewRef = useRef<any>();
 
   const [currentHeading, setCurrentHeading] = useState<number>(0);
-  const [pageHeading, setPageHeading] = useState<number>(0);
+  const [pageHeading, setPageHeading] = useState<number[]>([]);
 
   return (
     <View style = {styles.container}>
