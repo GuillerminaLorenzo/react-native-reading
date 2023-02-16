@@ -1,8 +1,15 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
-import styles from "../style/Styles";
+import styles from "./Styles";
 
-const NextButton = ({webviewRef, currentHeading, pageHeading, setCurrentHeading}) => {
+type NextButtonProps = {
+  webviewRef: React.RefObject<any>;
+  currentHeading: number;
+  pageHeading: Array<any>;
+  setCurrentHeading: React.Dispatch<React.SetStateAction<number>>;
+};
+
+const NextButton: React.FC<NextButtonProps> = ({ webviewRef, currentHeading, pageHeading, setCurrentHeading}) => {
   const secondToLastHeading = pageHeading.length - 1;
   const nextHeading = currentHeading + 1;
   const firstHeading = pageHeading[0];
@@ -22,8 +29,8 @@ const NextButton = ({webviewRef, currentHeading, pageHeading, setCurrentHeading}
     } 
   }
 
-  const scrollToHeadings = (heading) => {
-    webviewRef.current.injectJavaScript(`
+  const scrollToHeadings = (heading: number) => {
+    webviewRef.current?.injectJavaScript(`
       window.scrollTo(0, ${heading});
     `);
   };
@@ -31,8 +38,8 @@ const NextButton = ({webviewRef, currentHeading, pageHeading, setCurrentHeading}
   return (
     <TouchableOpacity
       style={styles.touchableOpacityLeft}
-      onPress={() => handleNextPress()}
-      testID={'next'} 
+      onPress={handleNextPress}
+      testID={'next'}
     >
       <Text style={styles.touchableOpacityText}>Next</Text>
     </TouchableOpacity>

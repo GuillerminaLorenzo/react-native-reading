@@ -1,15 +1,15 @@
 import React, { useState, useRef } from 'react';
 import { View } from 'react-native';
-import styles from "./scr/components/style/Styles";
-import NextButton from './scr/components/buttons/NextButton';
-import PrevButton from './scr/components/buttons/PrevButton';
-import WebViewComponent from './scr/components/webview/WebViewComponent';
+import styles from "./components/Styles";
+import NextButton from './components/NextButton';
+import PrevButton from './components/PrevButton';
+import WebViewComponent from './components/WebViewComponent';
 
-const App = () => {
-  const webviewRef = useRef();
+const App: React.FC = () => {
+  const webviewRef = useRef<any>();
 
-  const [currentHeading, setCurrentHeading] = useState(0);
-  const [pageHeading, setPageHeading] = useState(0);
+  const [currentHeading, setCurrentHeading] = useState<number>(0);
+  const [pageHeading, setPageHeading] = useState<number[]>([]);
 
   return (
     <View style = {styles.container}>
